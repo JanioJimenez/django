@@ -1,0 +1,248 @@
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.bloqueIzquierdo{
+    float: left;
+    width: 62.9vw;
+    height: 100vh;
+}
+
+.cajaVacia {
+    width: 50%;
+    height: 100px;
+    margin: auto;
+}
+
+.cajaLogo {
+    width: 50%;
+    height: 130px;
+    margin: auto;
+}
+
+.logoPro {
+    margin-left: 37%;
+    width: 100%;
+    height: 100px;
+    background: url('../img/login.png') no-repeat;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    font-family: 'Arial Black';
+    font-size: 18px;
+    color: rgb(14, 1, 49);
+}
+
+.formulario {
+    margin: auto;
+    text-align: center;
+    width: 500px; 
+    height: 270px;
+}
+
+#usuario {
+    width: 70%;
+	margin-top: 60px;
+	border-radius: 5px;
+	border: 1px solid rgb(230, 233, 233);
+	height: 35px;
+	padding: 5px 5px 5px 15px;
+    font-size: 14px;
+}
+
+::placeholder {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    opacity: 1; 
+    font-weight: 520;
+}
+
+#usuario:hover {
+    border-radius: 5px;
+    border: 1px solid aqua; 
+}
+
+#clave {
+    width: 70%;
+    margin-top: 20px;
+    border-radius: 5px;
+	border: 1px solid rgb(230, 233, 233);
+	height: 35px;
+	padding: 5px 5px 5px 15px;
+    color: rgba(0, 0, 0, 0.877);    
+    font-size: 14px;
+}
+
+#clave:hover {
+    border-radius: 5px;
+    border: 1px solid aqua; 
+}
+
+#enviar {
+    width: 75%;
+	margin-top: 20px;
+	border-radius: 5px;
+	border: 1px solid rgb(35, 179, 223);
+	height: 50px;
+	padding: 5px 5px 5px 15px;
+    font-size: 16px;
+    color: white;
+    background: rgb(35, 179, 223);
+    font-family: 'Arial Black';
+    cursor: pointer;
+}
+
+#enviar:hover {
+    border-radius: 5px;
+	border: 1px solid aqua;
+    opacity: 1;
+    color: rgb(10, 3, 77);
+    transition: .8s ease;
+    background: aqua;
+}
+
+#google {
+    text-align: center;
+    width: 75%;
+	margin-top: 20px;
+	border-radius: 5px;
+	border: 1px solid rgb(187, 24, 12);
+	height: 50px;
+    font-size: 16px;
+    color: white;
+    background: rgb(202, 22, 9);;
+    font-family: 'dubai';
+    cursor: pointer;
+}
+
+#google:hover {
+    border-radius: 5px;
+	border: 1px solid rgb(255, 0, 0);
+    opacity: 1;
+    transition: .8s ease;
+    background: rgb(255, 0, 0);
+
+    -webkit-box-shadow: 1px 11px 32px 2px rgba(179,179,179,1);
+    -moz-box-shadow: 1px 11px 32px 2px rgba(179,179,179,1);
+    box-shadow: 1px 11px 32px 2px rgba(179,179,179,1);
+}
+
+.cajaRegistro {
+    width: 400px;
+    height: 70px;
+    margin: auto;
+}
+
+.cuenta {
+    margin: auto;
+    margin-top: 70px;
+    width:88%;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 18px;
+    font-weight: 545;
+}
+
+#registrar {
+    margin-left: 20px;
+    width: 100px;  
+    height: 30px;
+    background: rgba(255, 255, 255, 0.863);
+    border: 1px solid rgb(235, 233, 233);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#registrar:hover {
+    height: 30px;
+    -webkit-box-shadow: 1px 11px 32px -7px rgba(179,179,179,1);
+    -moz-box-shadow: 1px 11px 32px -7px rgba(179,179,179,1);
+    box-shadow: 1px 11px 32px -7px rgba(179,179,179,1);
+}
+
+.regis {
+    color: rgb(0, 174, 255);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.bloqueDerecho {
+    float: right;
+    background: rgb(0, 2, 31);
+    width: 36vw;
+    height: 100vh; 
+}
+
+
+.logo {
+    margin-top: 160px;
+    margin-left: 100px;
+    background: url('../img/logo.png') no-repeat;
+    width: 24vw;
+    height: 56vh;
+
+}
+
+.capa {
+    position: absolute;
+    width: 36vw;
+    height: 100vh;
+    background: rgba(19, 1, 85, 0.753);
+    
+}
+
+.compilador {
+    position: absolute;
+    margin-top: 348px;
+    margin-left: 160px;
+    font-family: 'Arial Black';
+    font-size: 35px;
+    color: rgba(250, 250, 250, 0.411);
+
+}
+
+.compilador:hover {
+    transition: 2s ease;
+    color: white;
+}
+
+@media only screen and (max-width: 1300px) {
+    .logo {
+        margin-top: 200px;
+        background: url('../img/logo.png') no-repeat;
+        background-size: 300px;
+        width: 24vw;
+        height: 56vh;
+    }
+
+    .compilador {
+        margin-left: 120px;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    
+    .bloqueDerecho {
+        display: none;
+    }
+    
+    .bloqueIzquierdo {
+        float: left;
+        width: 100vw;
+        height: 100vh;;
+    }
+    
+    .logoPro {
+        margin-left: 37%;
+    }
+    
+}
+
+@media only screen and (max-width: 1000px){
+    .logoPro {
+        margin-left: 30%;
+    }
+}

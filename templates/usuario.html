@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/styleUsuario.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styleGmail.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <title> {% block tittle %} Usuario {% endblock %}</title>
+</head>
+
+<body>
+        <div class="bloqueIzquierdo">
+                <div class="cajaVacia"></div>
+                <div class="cajaLogo">
+                    <div class="logoPro"></div>
+                    <div class="titulo">Compilador Web</div>
+                </div>
+                <form action="">
+                    <div class="formulario">
+                        <input type="text" placeholder="Usuario" required id="usuario" class="campo">
+                        <input type="password" placeholder="Contraseña" required id="clave">
+                        <input type="submit" value="Iniciar sesión" id="enviar">
+                       {% block botonGmail %}
+                         
+                       {% endblock %} 
+                    </div>
+                    
+                </form>
+        
+                <div class="cajaRegistro">
+                    <div class="cuenta">
+                        <span class="pregunta">¿No tienes una cuenta?</span>
+                        <a href="{% url 'registro' %}"><input type="submit" value="Registrate" id="registrar" class="regis"></a>
+                    </div>
+                </div>
+                <div class="cajaVacia"></div>
+            </div>
+        
+            <div class="bloqueDerecho">
+                <div class="capa"></div>
+                <span class="compilador">COMPILADOR</span>
+                <div class="logo"></div>
+            </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

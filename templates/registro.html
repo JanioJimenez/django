@@ -18,7 +18,9 @@
             <div class="logoPro"></div>
             <div class="titulo">Compilador Web</div>
         </div>
-        
+        <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
             <div class="formulario">
                 <div class="procesoRegistro">Proceso de registro!</div>
                 <input type="text" placeholder="Nombres" required class="campo" id="campo">
@@ -27,15 +29,18 @@
                 <input type="text" placeholder="País" required class="campo">
                 <input type="text" placeholder="Ciudad origen" required class="campo">
                 <input type="text" placeholder="lenguaje de programación" required class="campo">
-                <input type="password" placeholder="Contraseña" required id="clave">
+                <input type="password" placeholder="Contraseña" required id="clave" class="campo">
                 <input type="submit" value="Empezar" id="enviar">
-                <input type="submit" value="INGRESAR CON GOOGLE g+" id="google">
             </div>
+        </form>
+
 
         <div class="cajaInicio">
             <div class="cuenta">
                 <span class="pregunta">¿Ya tienes una cuenta?</span>
-                <a href="{% url 'gmail' %}"><input type="submit" value="Iniciar sesión" id="inic" class="iniciar"></a>
+                <a href="{% url 'gmail' %}">
+                    <input type="submit" value="Iniciar sesión" id="inic" class="iniciar">
+                </a>
             </div>
         </div>
         <div class="cajaVacia"></div>

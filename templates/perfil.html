@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+
+
+{% block contenido %}
+    <div class="formulario">
+        <div class="Espacio"></div>
+        <div class="procesoRegistro">Editar Perfil</div>
+        <input type="text" placeholder="Nombres" required class="campo" id="campo">
+        <input type="text" placeholder="Primer apellido" required class="campo">
+        <input type="text" placeholder="Segundo apellido" required class="campo">
+        <input type="text" placeholder="Edad" required class="campo">
+        <input type="text" placeholder="País" required class="campo">
+        <input type="text" placeholder="Ciudad origen" required class="campo">
+        <input type="text" placeholder="lenguaje de programación" required class="campo">
+        <input type="password" placeholder="Contraseña" required id="clave" class="campo">
+        <div class="cajaBoto">
+            <input type="submit" value="Cancelar" id="enviar">
+            <input type="submit" value="Eliminar" id="enviar">
+            <input type="submit" value="Guardar" id="enviar">
+        </div>
+        
+       
+    </div>
+{% endblock  %}

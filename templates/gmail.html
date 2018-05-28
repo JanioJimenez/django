@@ -35,7 +35,8 @@
       if(authResult && !authResult.error) {
         loadGmailApi();
         $('#authorize-button').remove();
-        $('.table-inbox').removeClass("hidden");
+        $('.table-inbox').removeClass("hidden"); 
+        window.location.href = "{% url 'home' %}";
       } else {
         $('#authorize-button').removeClass("hidden");
         $('#authorize-button').on('click', function(){

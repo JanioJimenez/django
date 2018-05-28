@@ -1,0 +1,55 @@
+{% extends "home.html" %}
+
+{% block contenido %}
+
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+       
+            function drawChart() {
+       
+              var lenguaje = google.visualization.arrayToDataTable([
+                ['Lenguaje', 'Número de ejecuciones'],
+                ['Python',213],
+                ['Java',	454],
+                ['c++',   454],
+                ['c#', 254],
+                ['php',    75]
+              ]);
+       
+              var tipo = google.visualization.arrayToDataTable([
+                ['Tipo de lenguaje', 'Número de ejecuciones'],
+                ['Compilado',	5645],
+                ['Interpretado',	5454]
+              ]);
+       
+              var options = {
+                title: 'Lenguajes más usados'
+              };
+
+              var options = {
+                title: 'Compilado e interpretado'
+              };
+       
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+              var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
+       
+              chart.draw(lenguaje, options);
+              chart1.draw(tipo, options);
+            }
+          </script>
+      <body>
+         <div class="stadict">
+          <div class="caja"></div>
+          <div id="piechart" style="width:500px; height: 400px; display: inline-block" ></div>
+          <div id="piechart1" style="width: 500px; height: 400px;" ></div>
+        </div>
+
+      </body>
+       
+        
+{% endblock  %}
+
+
+

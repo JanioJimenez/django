@@ -20,3 +20,12 @@ def gmail(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def editor(request):
+    return render(request, 'editor.html')
+
+def estadistica(request):
+    return render(request, 'estadistica.html')
+
+def perfil(request):
+    return render(request, 'perfil.html')

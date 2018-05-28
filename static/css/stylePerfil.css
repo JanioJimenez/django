@@ -1,0 +1,94 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    font-family: 'Arial Black';
+    font-size: 18px;
+    color: rgb(14, 1, 49);
+}
+
+.formulario {
+    margin: auto;
+    text-align: center;
+    width: 500px; 
+    height: 448px;
+}
+
+.Espacio{
+    width: 500px;
+    height: 100px;
+}
+
+.procesoRegistro{   
+    width: 500px;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(77, 75, 83, 0.774);
+
+}
+.campo {
+    width: 70%;
+	margin-top: 15px;
+	border-radius: 5px;
+	border: 1px solid rgb(230, 233, 233);
+	height: 20px;
+	padding: 5px 5px 5px 15px;
+    font-size: 14px;
+}
+
+::placeholder {
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    opacity: 1; 
+    font-weight: 400;
+}
+
+.campo:hover {
+    border-radius: 5px;
+    border: 1px solid aqua;  
+}
+
+
+#clave {
+    width: 70%;
+	margin-top: 15px;
+	border-radius: 5px;
+	border: 1px solid rgb(230, 233, 233);
+	height: 20px;
+	padding: 5px 5px 5px 15px;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
+}
+
+#clave:hover {
+    border-radius: 5px;
+    border: 1px solid aqua;
+}
+
+#enviar {
+    display: inline;
+    width: 22%;
+	margin-top: 20px;
+	border-radius: 5px;
+	border: 1px solid rgb(35, 179, 223);
+	height: 35px;
+	padding: 5px 5px 5px 15px;
+    font-size: 16px;
+    color: white;
+    background: rgb(35, 179, 223);
+    font-family: 'Arial Black';
+    cursor: pointer;
+}
+
+#enviar:hover {
+    border-radius: 5px;
+	border: 1px solid aqua;
+    opacity: 1;
+    color: rgb(10, 3, 77);
+    transition: .8s ease;
+    background: aqua;
+}

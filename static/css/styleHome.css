@@ -1,3 +1,90 @@
-body {
-    background: rgb(7, 112, 197);
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 100vw;
+    height: 12vh;
+
+    background: rgb(19, 19, 19);
+}
+
+.centrar {
+    margin: auto;
+    width: 70vw;
+    padding: 3vh;
+    height: 6vh; 
+}
+
+.bloques{
+    margin: auto;
+    width: 70vw;
+    height: 6vh;
+  
+}
+
+.Vacia {
+    width: 100%;
+    height: 1vh;
+}
+
+.menu{
+    position: absolute;
+    margin: auto;
+    width: 70%;
+    height: 4vh; 
+}
+
+.block {
+    display: inline-block;
+    margin-right: 3vw;
+    font-family: 'dubai';
+    font-size: 18px;
+    color: rgba(240, 248, 255, 0.712);
+    cursor: pointer;
+}
+
+.block:hover{
+    color: white;
+}
+
+.usuario {
+    margin-left: 20vw;
+    font-family: 'dubai';
+    font-size: 18px;
+    color: rgba(240, 248, 255, 0.712);
+}
+
+.cerrar {
+    float: right;
+    margin-right: 5vw;
+    font-family: 'dubai';
+    font-size: 18px;
+    color: rgba(240, 248, 255, 0.712);
+    cursor: pointer;
+}
+
+.cerrar:hover{
+    color: white;
+}
+
+.inicio{
+    text-align: center;
+}
+
+.cajaCentrar {
+    width: 100%;
+    height: 27vh;  
+}
+
+.bienvenido {
+    text-align: center;
+    font-family: 'dubai light';
+    font-size: 10vw;
+    color: rgba(67, 69, 70, 0.692);
+}
+
+a:link{
+    text-decoration: none !important;
 }

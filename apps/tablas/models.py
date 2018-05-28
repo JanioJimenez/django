@@ -33,4 +33,5 @@ class Codigo(models.Model):
     fecha = models.DateField()
     codigo = models.TextField(null=True, blank=True)
     ejecucion = models.OneToOneField(Ejecucion,on_delete=models.CASCADE)
-   
+
+

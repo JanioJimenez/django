@@ -1,14 +1,51 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/styleHome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estadis.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylePerfil.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+ 
     <title>Home</title>
 </head>
+
 <body>
-    <h2>Home</h2>
+
+   <div class="navbar">
+        <div class="centrar">
+            
+            <div class="bloques">
+                <div class="Vacia"></div>
+                <div class="menu">
+                    <span class="block" id="code">Code</span>
+                    <a href="{% url 'estadistica' %}"><span class="block" id="estadict">Estadistica</span></a>
+                    <span class="block" id="perfil">Perfil</span>
+                    <span class="usuario">Usuario</span>
+                    <span class="cerrar" id="cerrar">Cerrar Sesión</span>                    
+                </div>
+                <div class="Vacia"></div>
+            </div>
+
+        </div>
+    </div> 
+
+{% block contenido %}
+    <div class="inicio">
+            <div class="cajaCentrar"></div>
+            <span class="bienvenido"><\>Bienvenidos<\></span>
+            <div class="cajaCentrar"></div>
+    </div>
+{% endblock  %}
+ {% block textEditor %} {% endblock %}      
+
+ <script src="{% static 'js/main.js' %}"></script>
+   
+
 </body>
+
 </html>

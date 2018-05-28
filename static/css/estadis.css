@@ -1,0 +1,19 @@
+.stadict{
+    margin: auto;
+    width: 75%;
+    height: 45vh;
+}
+
+.caja{
+    width: 50%;
+    height: 15vh;
+}
+
+#piechart{
+    float: left;
+
+}
+
+#piechart1{
+    float: left;
+}

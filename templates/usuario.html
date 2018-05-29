@@ -19,20 +19,20 @@
                     <div class="logoPro"></div>
                     <div class="titulo">Compilador Web</div>
                 </div>
-                <form action="">
+                <form action="" method="POST">
+                        {% csrf_token %}
                     <div class="formulario">
-                        <input type="text" placeholder="Usuario" required id="usuario" class="campo">
-                        <input type="password" placeholder="Contraseña" required id="clave">
+                        <input name="email" type="text" placeholder="email" required id="usuario" class="campo">
+                        <input name="pass1" type="password" placeholder="Contraseña" required id="clave">
                         <input type="submit" value="Iniciar sesión" id="enviar">
-                       {% block botonGmail %}
-                         
-                       {% endblock %} 
+                       {% block botonGmail %}{% endblock %} 
                     </div>
                     
                 </form>
         
                 <div class="cajaRegistro">
                     <div class="cuenta">
+                        <a href="#" class="recuperar">Olvidaste tu Contraseña</a>
                         <span class="pregunta">¿No tienes una cuenta?</span>
                         <a href="{% url 'registro' %}"><input type="submit" value="Registrate" id="registrar" class="regis"></a>
                     </div>

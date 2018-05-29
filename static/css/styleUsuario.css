@@ -145,6 +145,12 @@
     font-weight: 545;
 }
 
+.recuperar{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 #registrar {
     margin-left: 20px;
     width: 100px;  
@@ -171,7 +177,7 @@
 .bloqueDerecho {
     float: right;
     background: rgb(0, 2, 31);
-    width: 36vw;
+    width: 34vw;
     height: 100vh; 
 }
 
@@ -187,7 +193,7 @@
 
 .capa {
     position: absolute;
-    width: 36vw;
+    width: 34vw;
     height: 100vh;
     background: rgba(19, 1, 85, 0.753);
     

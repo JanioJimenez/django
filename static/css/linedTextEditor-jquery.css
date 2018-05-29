@@ -20,14 +20,13 @@
 .lined-textarea-container .lines .linesContainer {
     box-sizing: inherit;
     position: relative;
-    padding-top: 2px;
     border-right: 1px solid #c0c0c0;
 }
 
 .lined-textarea-container .lines .linesContainer .line-number {
     width: 100%;
     display: block;
-    color: #999999;
+    color: #c2c5c2;
     text-align: right;
     padding: 0px 3px;
     line-height: inherit;
@@ -76,13 +75,110 @@
 
 .light {}
 
-.fondo{
-    width: 100%;
-    height: 85vh;
-    background: rgb(0, 0, 0);
+.lined{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: #a4dd1f;
 }
 
-.compiler{
-    width: 100vw;
+.fondo{
+    margin: auto;
+    margin-top: 40px;
+    width: 80%;
     height: 10vh;
+    border-bottom: 1px;
+    border: 1px solid rgb(146, 146, 146);
+    background: #181717e3;
 }
+
+.barra{
+    width: 100%;
+    height: 15px;
+}
+
+.barraNavbar{
+    margin: auto;
+    width: 90%;
+    height: 40px;
+    background: #1fb1ddb0;
+}
+
+
+.fbuscar{
+    float: left;
+    margin-top: 2px;
+    margin-left: 5%;
+    width: 30%;
+    height: 36px;
+    background: #c0c0c0;
+}
+
+.buscar{
+    margin-left: 10px;
+    margin-top: 3px;
+    float: left;
+    width: 80%;
+    height: 26px;
+}
+
+.icono{
+    margin-top: 3px;
+}
+
+.lenguaje{
+    float: left;
+    margin-left: 2%; 
+    margin-top: 5px;
+    width: 15%;
+    height: 26px;
+    background: #e9e8e8;
+
+}
+
+.descargar{
+    float: left;
+    margin-left: 2%; 
+    margin-top: 5px;
+    width: 5%;
+    height: 26px;
+    background: #e9e8e800;
+    border: 1px;
+}
+
+.ejecutar{
+    float: left;
+    margin-left: 2%; 
+    margin-top: 3.4px;
+    width: 10%;
+    height: 32.5px;
+}
+
+.compiler {
+    margin: auto;   
+    width: 100%;
+}
+
+.compilerCenter {
+    margin: auto;
+    width: 80%;
+    height: 60vh;
+    background: #181717e3;
+}
+
+.fondoCompiler{
+    margin: auto;
+    width: 95%;
+    height: 42vh;
+    background: #c0c0c036;
+}
+
+.consola {
+    margin-top: 20px;
+    width: 100%;
+    height: 10vh;
+    background: #c0c0c06b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFF;
+}
+
+

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django import forms
 from .models import *
 
 # Create your views here.
@@ -38,8 +39,7 @@ def registro(request):
            )
        usuario.save()
        print("Exito")
-    else:
-        pass
+    
     return render(request,'registro.html',context)
 
 
@@ -55,7 +55,7 @@ def gmail(request):
             )
             return render(request,'home.html')
         except:
-            pass
+          pass
     return render(request, 'gmail.html')
 
 def home(request):

@@ -1,0 +1,96 @@
+{% extends "home.html" %} {% load static %} {% block contenido %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Compilador Web</title>
+		<script language="Javascript" type="text/javascript" src="../edit_area/edit_area_full.js"></script>
+		<script language="Javascript" type="text/javascript">
+			// initialisation
+			editAreaLoader.init({
+				id: "example_3"	// id of the textarea to transform	
+				,start_highlight: true	
+				,font_size: "8"
+				,font_family: "verdana, monospace"
+				,allow_resize: "y"
+				,allow_toggle: false
+				,language: "es"
+				,syntax: "css"	
+				,toolbar: "new_document, save, load,|, search, go_to_line, |, undo, redo, |, select_font, |, change_smooth_selection, highlight,|, help"
+				,load_callback: "my_load"
+				,save_callback: "my_save"
+				,plugins: "charmap"
+				,charmap_default: "arrows"
+					
+			});
+			
+			// callback functions
+			function my_save(id, content){
+				alert("Guardar Código '"+ id +"' En Sus Archivos ?\n"+content);
+			}
+			
+			function my_load(id){
+				editAreaLoader.setValue(id, "codigo de prueba");
+			}
+			
+			function test_setSelectionRange(id){
+				editAreaLoader.setSelectionRange(id, 100, 150);
+			}
+			
+			function test_getSelectionRange(id){
+				var sel =editAreaLoader.getSelectionRange(id);
+				alert("start: "+sel["start"]+"\nend: "+sel["end"]); 
+			}
+			
+			function test_setSelectedText(id){
+				text= "[REPLACED SELECTION]"; 
+				editAreaLoader.setSelectedText(id, text);
+			}
+			
+			function test_getSelectedText(id){
+				alert(editAreaLoader.getSelectedText(id)); 
+			}
+			
+			function editAreaLoaded(id){
+				if(id=="example_2")
+				{
+					open_file1();
+					open_file2();
+				}
+			}
+			
+			function open_file1()
+			{
+				var new_file= {id: "to\\ é # € to", text: "$authors= array();\n$news= array();", syntax: 'php', title: 'beautiful title'};
+				editAreaLoader.openFile('example_2', new_file);
+			}
+			
+			function open_file2()
+			{
+				var new_file= {id: "Filename", text: "<a href=\"toto\">\n\tbouh\n</a>\n<!-- it's a comment -->", syntax: 'html'};
+				editAreaLoader.openFile('example_2', new_file);
+			}
+			
+			function close_file1()
+			{
+				editAreaLoader.closeFile('example_2', "to\\ é # € to");
+			}
+			
+			function toogle_editable(id)
+			{
+				editAreaLoader.execCommand(id, 'set_editable', !editAreaLoader.execCommand(id, 'is_editable'));
+			}
+		
+		</script>
+	</head>
+	<body>
+    	{% block container %}
+		<h2 align="center">Compilador</h2>
+		<legend>Compile Su Codigo Aqui!!</legend>
+		<form>
+	      <textarea id="example_3" style="height: 350px; width: 100%;" name="test_3"></textarea>
+		</form>
+    	{% endblock %}
+	</body>
+	</html>
+	{% endblock %}

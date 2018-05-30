@@ -1,0 +1,72 @@
+
+.fondo{
+margin: auto;
+margin-top: 40px;
+width: 100%;
+height: 10vh;
+border-bottom: 1px;
+border: 1px solid rgb(146, 146, 146);
+background: #181717e3;
+}
+
+.barra{
+width: 100%;
+height: 15px;
+}
+
+.barraNavbar{
+margin: auto;
+width: 60%;
+height: 40px;
+
+}
+
+
+.fbuscar{
+float: left;
+margin-top: 2px;
+margin-left: 5%;
+width: 30%;
+height: 36px;
+background: #c0c0c0;
+}
+
+.buscar{
+margin-left: 10px;
+margin-top: 3px;
+float: left;
+width: 80%;
+height: 26px;
+}
+
+.icono{
+margin-top: 3px;
+}
+
+.lenguaje{
+float: left;
+margin-left: 2%; 
+margin-top: 5px;
+width: 15%;
+height: 26px;
+background: #e9e8e8;
+
+}
+
+.descargar{
+float: left;
+margin-left: 2%; 
+margin-top: 5px;
+width: 5%;
+height: 26px;
+background: #e9e8e800;
+border: 1px;
+}
+
+.ejecutar{
+float: left;
+margin-left: 2%; 
+margin-top: 3.4px;
+width: 10%;
+height: 32.5px;
+}

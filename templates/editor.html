@@ -1,110 +1,130 @@
 {% extends "home.html" %} {% load static %} {% block contenido %}
-<!doctype html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery LinedTextDiv Plugin Demo</title>
-    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="{% static 'js/linedTextEditor-jquery.js' %}"></script>
-    <link href="{% static 'css/linedTextEditor-jquery.css' %}" type="text/css" rel="stylesheet" />
-    <style>
-        html {
-            min-height: 45vh;
-        }
-
-        body {
-            font-family: 'Orbitron';
-        }
-    </style>
-</head>
-
-<body>
-    <div class="fondo">
-        <div class="barra"></div>
-        <div class="barraNavbar">
-            <div class="centrarNavbar">
-                <div class="fbuscar">
-                    <input type="text" class="buscar">
-                    <button class="icono">
-                        <img src="../static/img/lupa.png" alt="">
-                    </button>
-                </div>
-                <select name="hall" id="hall" value="3" class="lenguaje">
-                    <option>------ lenguajes ------</option>
-                    <option>Python</option>
-                    <option>Java</option>
-                    <option>C++</option>
-                    <option>C#</option>
-                    <option>PHP</option>
-                </select>
-                <button class="descargar">
-                    <img src="../static/img/descarga.png" alt="">
-                </button>
-                <button class="descargar">
-                    <img src="../static/img/subir.png" alt="">
-                </button>
-                <button class="ejecutar">
-                    <img id="ejecutar" src="../static/img/ejecutar.png" alt="">
-                </button>
-            </div>
-
-        </div>
-
-    </div>
-    <div class="compiler">
-        <div class="compilerCenter">
-            <div class="fondoCompiler">
-                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-                <pre id="text" class="lined"></pre>
-                <input type="text" class="consola" name="text" value="consola>>">
-            </div>
-        </div>
-
-    </div>
-
-
-    <script>
-        $(function () {
-            $(".lined").linedTextEditor();
-        });
-    </script>
-</body>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-    $("#ejecutar").click(function(){
-        $.ajax({
-            url: 'parser',
-            type: 'POST',
-            data: {
-                csrfmiddlewaretoken: '{{ csrf_token }}',
-                text: $("#text").val(),
-            },
-            success: function(result){
-                alert(result);
-            }, error: function(result){
-                alert("");
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Compilador Web</title>
+        <link rel="stylesheet" href="{% static 'css/estiloEditor.css' %}">
+        <script language="Javascript" type="text/javascript" src="{% static 'edit_area/edit_area_full.js' %}"></script>
+        <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+        <script language="Javascript" type="text/javascript">
+            // initialisation
+            editAreaLoader.init({
+                id: "example_3" // id of the textarea to transform  
+                ,start_highlight: true  
+                ,font_size: "8"
+                ,font_family: "verdana, monospace"
+                ,allow_resize: "y"
+                ,allow_toggle: false
+                ,language: "es"
+                ,syntax: "css"  
+                ,toolbar: "new_document, save, load,|, search, go_to_line, |, undo, redo, |, select_font, |, change_smooth_selection, highlight,|, help"
+                ,load_callback: "my_load"
+                ,save_callback: "my_save"
+                ,plugins: "charmap"
+                ,charmap_default: "arrows"
+                    
+            });
+            
+            // callback functions
+            function my_save(id, content){
+                alert("Guardar Código '"+ id +"' En Sus Archivos ?\n"+content);
             }
-        })
-    });
-</script>
+            
+            function my_load(id){
+                editAreaLoader.setValue(id, "codigo de prueba");
+            }
+            
+            function test_setSelectionRange(id){
+                editAreaLoader.setSelectionRange(id, 100, 150);
+            }
+            
+            function test_getSelectionRange(id){
+                var sel =editAreaLoader.getSelectionRange(id);
+                alert("start: "+sel["start"]+"\nend: "+sel["end"]); 
+            }
+            
+            function test_setSelectedText(id){
+                text= "[REPLACED SELECTION]"; 
+                editAreaLoader.setSelectedText(id, text);
+            }
+            
+            function test_getSelectedText(id){
+                alert(editAreaLoader.getSelectedText(id)); 
+            }
+            
+            function editAreaLoaded(id){
+                if(id=="example_2")
+                {
+                    open_file1();
+                    open_file2();
+                }
+            }
+            
+            function open_file1()
+            {
+                var new_file= {id: "to\\ é # € to", text: "$authors= array();\n$news= array();", syntax: 'php', title: 'beautiful title'};
+                editAreaLoader.openFile('example_2', new_file);
+            }
+            
+            function open_file2()
+            {
+                var new_file= {id: "Filename", text: "<a href=\"toto\">\n\tbouh\n</a>\n<!-- it's a comment -->", syntax: 'html'};
+                editAreaLoader.openFile('example_2', new_file);
+            }
+            
+            function close_file1()
+            {
+                editAreaLoader.closeFile('example_2', "to\\ é # € to");
+            }
+            
+            function toogle_editable(id)
+            {
+                editAreaLoader.execCommand(id, 'set_editable', !editAreaLoader.execCommand(id, 'is_editable'));
+            }</script>
+    </head>
+    <body>
 
+            <div class="fondo">
+            <div class="barra"></div>
+            <div class="barraNavbar">
+            <div class="centrarNavbar">
+            <select name="hall" id="hall" value="3" class="lenguaje">
+            <option>------ lenguajes ------</option>
+            <option>Python</option>
+            <option>Java</option>
+            <option>C++</option>
+            <option>C#</option>
+            <option>PHP</option>
+            </select>
+            <button class="descargar">
+            <img src="../static/img/descarga.png" alt="">
+            </button>
+            <button class="descargar">
+            <img src="../static/img/subir.png" alt="">
+            </button>
+            <button class="ejecutar" id="ejecutar" name="ejecutar">
+            <img src="../static/img/ejecutar.png" alt="">
+                
+            </button>
+            </div>
+
+            </div>
+
+            </div>
+        {% block container %}
+        <h2 align="center">Compilador</h2>
+        <legend>Compile Su Codigo Aqui!!</legend>
+        
+        <form method="POST" action="">
+            {% csrf_token %}
+          <textarea id="example_3" name="code" style="height: 350px; width: 100%;" name="test_3"></textarea>
+          <input type="submit" name="go">
+          {% endblock %} 
+        </form>
+    </body>
 </html>
-
 
 {% endblock %}

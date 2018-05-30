@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django import forms
 from .models import *
-#from ..parser.parser import parser
 
 # Create your views here.
 def index(request):
@@ -64,8 +63,11 @@ def gmail(request):
 def home(request):
     return render(request, 'home.html')
 
+from ..parser.parser import evaluar
 def editor(request):
-    return render(request, 'editor.html')
+  if request.method == 'POST':
+    print(evaluar(str(request.POST['code'])))
+  return render(request, 'editor.html')
 
 def estadistica(request):
     return render(request, 'estadistica.html')

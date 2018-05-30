@@ -66,7 +66,13 @@ def home(request):
 from ..parser.parser import evaluar
 def editor(request):
   if request.method == 'POST':
-    print(evaluar(str(request.POST['code'])))
+    code = request.POST['code']
+    resul = evaluar(str(request.POST['code']))
+    context = {
+      'code': code,
+      'resul': resul,
+    }
+    return render(request, 'editor.html', context)
   return render(request, 'editor.html')
 
 def estadistica(request):
@@ -76,5 +82,6 @@ def perfil(request):
     return render(request, 'perfil.html')
 
 def parser(request):
-    parser.parse(request.POST[''])
-    return render(request, 'perfil.html')
+  if request.method == 'POST':
+    print(evaluar(str(request.POST['code'])))
+  return render(request, 'perfil.html')

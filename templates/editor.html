@@ -120,10 +120,11 @@
         
         <form method="POST" action="">
             {% csrf_token %}
-          <textarea id="example_3" name="code" style="height: 350px; width: 100%;" name="test_3"></textarea>
-          <input type="submit" name="go">
+          <textarea id="example_3" name="code" style="height: 350px; width: 100%;" name="test_3">{{ code }}</textarea>
+          <input type="submit" class="ejecutar" name="go">
           {% endblock %} 
         </form>
+        <textarea id="example_3" name="code" style="height: 350px; width: 100%;" name="test_3">{{ resul }}</textarea>
     </body>
 </html>
 
